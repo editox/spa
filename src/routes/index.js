@@ -17,7 +17,10 @@ const router = async () => {
 
   header.innerHTML = await Header();
   let hash = getHash();
+  let host = location.host;
   console.log(hash);
+  console.log(host);
+  console.log(location.hostname);
   let route = await resolveRoutes(hash);
   let render = routes[route]? routes[route] : Error404;
   content.innerHTML = await render();
